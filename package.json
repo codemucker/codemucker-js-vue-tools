@@ -1,0 +1,44 @@
+{
+  "name": "@codemucker/vue2-tools",
+  "description": "Utils when developing with vue",
+  "license": "MIT",
+  "version": "0.1.1",
+  "authors": [
+    "Bert van Brakel"
+  ],
+  "keywords": [
+    "vue"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:codemucker/codemucker-js-vue-tools.git"
+  },
+  "private": false,
+  "main": "build/js/src/index.js",
+  "types": "build/js/src/index.d.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "postversion": "git push && git push --tags",
+    "release": "npm publish --access public",
+    "pre-commit": "npm run format && npm run lint && npm run test",
+    "version": "npm run format && git add -A src",
+    "format": "npx prettier --write .",
+    "lint": "npx prettier --check \"src/**/*.ts\" \"test/**/*.ts\"",
+    "clean": "rm -fR build && rm -fR node_modules/",
+    "build": "tsc",
+    "build-watch": "tsc --watch",
+    "test": "npm run build && jest --verbose=true --detectOpenHandles --coverageDirectory build/jest-coverage",
+    "test-watch": "watch 'npm run test' ./src/ ./test/"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "jest": "^26.6.1",
+    "prettier": "2.1.2",
+    "shared-git-hooks": "^1.2.1",
+    "ts-jest": "^26.4.0",
+    "typescript": "~3.9.3"
+  }
+}
