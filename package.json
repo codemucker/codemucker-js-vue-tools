@@ -1,5 +1,5 @@
 {
-  "name": "@codemucker/vue2-tools",
+  "name": "@codemucker/vue2-helpers",
   "description": "Utils when developing with vue",
   "license": "MIT",
   "version": "0.1.1",
@@ -32,13 +32,22 @@
     "test": "npm run build && jest --verbose=true --detectOpenHandles --coverageDirectory build/jest-coverage",
     "test-watch": "watch 'npm run test' ./src/ ./test/"
   },
-  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^26.0.15",
     "jest": "^26.6.1",
     "prettier": "2.1.2",
     "shared-git-hooks": "^1.2.1",
     "ts-jest": "^26.4.0",
-    "typescript": "~3.9.3"
+    "typescript": "~3.9.3",
+    "vue": "^2.6.12",
+    "vue-router": "^3.4.9",
+    "tslib": "^2.0.3"
+  },
+  "dependencies": {
+
+  },
+  "peerDependencies": {
+    "vue": "2.x",
+    "vue-router": "3.x"
   }
 }
